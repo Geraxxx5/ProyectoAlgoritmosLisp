@@ -1,0 +1,1 @@
+(defun fibonacci (x) (COND ((< x 2) x) (t (+ (fibonacci (- x 1)) (fibonacci (- x 2)))))) (fibonacci 9)
