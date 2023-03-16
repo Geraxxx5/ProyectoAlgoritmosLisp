@@ -1,6 +1,7 @@
 (defvar x 10) (defvar y 20) (cond ((> x y) (+ 5 2)) (t (- 5 2)))
 (setq x 20) (setq y 5) (+ y x)
 (+ 5 2)
+(setq x 10) x
 (seq x (a,b)) (atom x)
 (Eval (quote (+ 5 2)))
 (quote (+ 5 2))

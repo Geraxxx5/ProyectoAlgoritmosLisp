@@ -113,7 +113,7 @@ public class EvaluateExpression {
      * 
      */
     public Object evaluate(List<Object> expr, VariableModel variable, FunctionModel functions){
-        
+
             //take the fisrt element of the expression to know if its a list, conditional, function, command
             Object firstElement = expr.get(0);
             
@@ -125,7 +125,7 @@ public class EvaluateExpression {
                 }else{
                     expressionList = (List<Object>) firstElement;
                 }
-                System.out.println(expressionList);
+
                 //Take the operator of the expression list
                 String oper = (String) expressionList.get(0);
 
@@ -335,7 +335,6 @@ public class EvaluateExpression {
                     double res1 = 0.0;
                     double res2 = 0.0;
                     Object value1 = expressionList.get(1);
-                    System.out.println("Value 1: "+value1);
                     Object value2 = null;
                     if(!oper.equals("sqrt")){
                         value2 = expressionList.get(2);
@@ -360,7 +359,7 @@ public class EvaluateExpression {
                             //res2 = (double) value2;
                             if(value2 instanceof String){
                                 res2 = Double.parseDouble(String.valueOf(symbolEvaluate(value2,variable)));
-                                //System.out.println("res2: "+res2);
+
                             }else{
                                 res2 = Double.parseDouble(String.valueOf(value2));
                             }
@@ -461,9 +460,10 @@ public class EvaluateExpression {
             if(expr.size() > 1){
                 List<Object> subList = expr.subList(1, expr.size());
                 return evaluate(subList,variable, functions);
+            }else{
+                return symbolEvaluate(firstElement, variable);
             }
             //return expr;
-            throw new RuntimeException("Eror: unexpected"); 
         }
     
     /**
