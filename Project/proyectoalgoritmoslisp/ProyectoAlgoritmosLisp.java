@@ -16,7 +16,16 @@ public class ProyectoAlgoritmosLisp {
         VariableModel variableModel = new VariableModel();
         EvaluateExpression evaluate = new EvaluateExpression();
         List<Object> expression = ParserExpression.readFileExpression("datos.txt", true);
-        System.out.println(evaluate.evaluate(expression, variableModel, functionModel));
+        System.out.println("---------------------------------");
+        System.out.println("obtained expression: "+expression);
+        System.out.println("---------------------------------");
+        System.out.println("---------------------------------");
+        try {
+            System.out.println("result of the expression: "+evaluate.evaluate(expression, variableModel, functionModel));   
+        } catch (Exception e) {
+            System.err.println("Error: "+e);
+        }
+        System.out.println("---------------------------------");
     }
     
 }
